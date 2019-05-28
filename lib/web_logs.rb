@@ -2,10 +2,11 @@
 class WebLogs
   attr_reader :sitelist, :ordered_sites, :ordered_ips
 
-  def initialize
+  def initialize(printer = Printer.new)
     @sitelist = {}
     @ordered_sites = []
     @ordered_ips = []
+    @printer = printer
   end
 
   def create_sites_hash(filename)
@@ -22,5 +23,9 @@ class WebLogs
 
   def order_ips
     @ordered_ips = @sitelist.sort_by { |_site, visitors| visitors.uniq.length }.reverse
+  end
+
+  def site_count
+    @printer.site_count(@ordered_sites)
   end
 end
