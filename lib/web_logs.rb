@@ -16,6 +16,6 @@ class WebLogs
   end
 
   def order_sites
-   @ordered_sites = @sitelist.sort_by { |site, visits| visits.length }.reverse
+    @ordered_sites = @sitelist.sort_by { |_site, visits| visits.length }.reverse
   end
 end
