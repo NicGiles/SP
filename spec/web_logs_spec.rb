@@ -1,7 +1,7 @@
 require 'web_logs'
 require 'spec_helper'
 
-describe Web_logs do
+describe WebLogs do
   subject(:logs) { described_class.new }
 
   describe '#create_sites_hash' do

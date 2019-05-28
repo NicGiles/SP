@@ -1,5 +1,5 @@
 # web_logs class for storing log into a hash.
-class Web_logs
+class WebLogs
   attr_reader :sitelist
 
   def initialize
