@@ -34,5 +34,12 @@ describe WebLogs do
         subject.site_count
       end
     end
+
+    describe '#ips_count' do
+      it 'calls unique_visitor_count on printer' do
+        expect(printer).to receive(:unique_visitor_count).with(subject.ordered_ips)
+        subject.ips_count
+      end
+    end
   end
 end
