@@ -5,6 +5,12 @@ describe WebLogs do
   subject(:logs) { described_class.new(printer) }
   let(:printer) { double :printer }
 
+  context 'Incorrect file path provided.' do
+    it 'Warns user if incorrect file path.' do
+      expect{ subject.create_sites_hash("./spec/fake_log.log") }.to raise_error "File does not exist."
+    end
+  end
+
   context 'Working file uploaded.' do
     before do
       subject.create_sites_hash('./spec/test_log.log')

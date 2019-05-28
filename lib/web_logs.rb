@@ -11,6 +11,7 @@ class WebLogs
   end
 
   def create_sites_hash(filename)
+    fail "File does not exist." unless File.file?(filename)
     File.open(filename).each do |ip_site_logs|
       sites = ip_site_logs.split(' ')
       @sitelist.key?(sites[0]) ?
