@@ -23,7 +23,7 @@ describe WebLogs do
 
     describe '#order_ips' do
       it 'Orders sites by number of visitors.' do
-        expect(subject.order_ips).to eq([['/index', %w[444, 445, 446, 447]], ['page1', %w[929, 722, 646, 126]], ['home', %w[184, 235, 185]], ['/about', ['061']], ['/about/2', %w[444, 444]], ['contact', ['184']]])
+        expect(subject.order_ips).to eq([['/index', %w[444 445 446 447]], ['page1', %w[929 722 646 126]], ['home', %w[184 235 185]], ['/about', ['061']], ['/about/2', %w[444 444]], ['contact', ['184']]])
       end
     end
   end
