@@ -7,25 +7,25 @@ describe WebLogs do
 
   context 'Empty file uploaded.' do
     before do
-      subject.create_sites_hash("./spec/empty_log.log")
+      subject.create_sites_hash('./spec/empty_log.log')
     end
 
     describe '#order_sites' do
       it 'Warns user if trying to order an empty hash' do
-        expect{ subject.order_sites }.to raise_error "Log file empty. Try creating new sites hash."
+        expect { subject.order_sites }.to raise_error 'Log file empty. Try creating new sites hash.'
       end
     end
 
     describe '#order_ips' do
       it 'Warns user if trying to order an empty hash' do
-        expect{ subject.order_ips }.to raise_error "Log file empty. Try creating new sites hash."
+        expect { subject.order_ips }.to raise_error 'Log file empty. Try creating new sites hash.'
       end
     end
   end
 
   context 'Incorrect file path provided.' do
     it 'Warns user if incorrect file path.' do
-      expect{ subject.create_sites_hash("./spec/fake_log.log") }.to raise_error "File does not exist."
+      expect { subject.create_sites_hash('./spec/fake_log.log') }.to raise_error 'File does not exist.'
     end
   end
 
