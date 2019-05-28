@@ -1,6 +1,7 @@
-# web_logs class for storing log into a hash.
 require_relative 'printer'
+# web_logs class for storing log into a hash.
 class WebLogs
+
   attr_reader :sitelist, :ordered_sites, :ordered_ips
 
   def initialize(printer = Printer.new)
@@ -20,10 +21,12 @@ class WebLogs
   end
 
   def order_sites
+    fail "Log file empty. Try creating new sites hash." if @sitelist.empty?
     @ordered_sites = @sitelist.sort_by { |_site, visits| visits.length }.reverse
   end
 
   def order_ips
+    fail "Log file empty. Try creating new sites hash." if @sitelist.empty?
     @ordered_ips = @sitelist.sort_by { |_site, visitors| visitors.uniq.length }.reverse
   end
 
