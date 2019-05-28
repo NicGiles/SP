@@ -4,7 +4,7 @@ A Ruby implementation of a script which accepts a log file, and provides the use
 
 ## Getting Started
 
-To use this app first clone the app, and bundle locally.
+To use this app first clone the repo, and bundle locally.
 
 git clone https://github.com/nicgiles/SP.git
 
@@ -55,7 +55,6 @@ The app considers a few potential edge cases.
 If the user passes an incorrect path name to the script they are warned that the file does not exist.
 
 ```Ruby
-def create_sites_hash(filename)
   raise 'File does not exist.' unless File.file?(filename);
 ```
 ```
