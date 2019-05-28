@@ -1,4 +1,5 @@
 # web_logs class for storing log into a hash.
+require_relative 'printer'
 class WebLogs
   attr_reader :sitelist, :ordered_sites, :ordered_ips
 
@@ -27,5 +28,9 @@ class WebLogs
 
   def site_count
     @printer.site_count(@ordered_sites)
+  end
+
+  def ips_count
+    @printer.unique_visitor_count(@ordered_ips)
   end
 end
