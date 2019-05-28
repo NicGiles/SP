@@ -18,7 +18,6 @@ require 'simplecov-console'
 
 SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start
-
 SimpleCov.at_exit do
   SimpleCov.result.format!
 end
