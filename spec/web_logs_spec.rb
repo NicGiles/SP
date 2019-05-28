@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe WebLogs do
   subject(:logs) { described_class.new(printer) }
-  let(:printer) {double :printer}
+  let(:printer) { double :printer }
 
   context 'Working file uploaded.' do
     before do
